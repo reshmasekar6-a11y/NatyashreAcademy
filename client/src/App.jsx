@@ -27,8 +27,15 @@
     message: ''
   };
 
-  // Backend server host address configuration
-  const BACKEND_URL = "http://localhost:5000";
+  const API_BASE_URL = import.meta.env.VITE_API_URL || '/api';
+  const ASSET_BASE_URL = API_BASE_URL.endsWith('/api') ? API_BASE_URL.slice(0, -4) : API_BASE_URL;
+
+  function resolveImageUrl(imageUrl) {
+    if (!imageUrl) return '';
+    if (/^https?:\/\//i.test(imageUrl)) return imageUrl;
+    if (imageUrl.startsWith('/')) return `${ASSET_BASE_URL}${imageUrl}`;
+    return imageUrl;
+  }
 
   function App() {
     const [content, setContent] = useState(fallbackContent);
@@ -162,11 +169,10 @@
             </div>
             <div className="program-grid">
               {content.programs.map((program) => {
-                const fullProgramImg = BACKEND_URL + program.image_url;
+                const fullProgramImg = resolveImageUrl(program.image_url);
                 return (
                   <article className="program-card" key={program.id}>
-                    <img src={fullProgramImg} alt={`${program.title} class`} 
-                    style={{ width: '300px', height: '300px', objectFit: 'cover', border: '5px solid red' }} />
+                    <img src={fullProgramImg} alt={`${program.title} class`} />
                   
     
                     <div>
@@ -224,7 +230,7 @@
             </div>
             <div className="teacher-grid">
               {content.teachers.map((teacher) => {
-                const fullTeacherImg = BACKEND_URL + teacher.image_url;
+                const fullTeacherImg = resolveImageUrl(teacher.image_url);
                 return (
                   <article className="teacher-card" key={teacher.id}>
                     <img src={fullTeacherImg} alt={teacher.name} />
@@ -346,3 +352,6 @@ function FormField({ label, type = "text", name, value, error, onChange, require
 }
 
     export default App;
+
+
+
