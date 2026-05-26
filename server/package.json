@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "nodemon src/server.js",
     "start": "node src/server.js",
-    "check": "node --check src/server.js && node --check src/app.js"
+    "check": "node --check src/server.js && node --check src/app.js",
+    "db:import": "node scripts/importDatabase.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
