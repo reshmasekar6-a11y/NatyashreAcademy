@@ -9,15 +9,13 @@ export const fallbackContent = {
       image_url: '/images/BharathamDanceGreen.png'
     },
     {
-  id: 2,
-  title: 'Kuchipudi',
-  category: 'Classical Dance',
-  description: 'Graceful Kuchipudi training focused on technique, storytelling, tala, stage movement, and traditional compositions.',
-  highlights: ['Technique and expression', 'Solo and group choreography', 'Cultural performance opportunities'],
-  // image_url: 'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=1100&q=80', <-- Added comma here if un-commented
-  image_url: '/images/Kuchipudi_Dance_Image3.jpeg' // <-- ADD A COMMA HERE!
-},
-
+      id: 2,
+      title: 'Kuchipudi',
+      category: 'Classical Dance',
+      description: 'Graceful Kuchipudi training focused on technique, storytelling, tala, stage movement, and traditional compositions.',
+      highlights: ['Technique and expression', 'Solo and group choreography', 'Cultural performance opportunities'],
+      image_url: '/images/Kuchipudi_Dance_Image3.jpeg'
+    },
     {
       id: 3,
       title: 'Karnatic Music',
@@ -25,6 +23,14 @@ export const fallbackContent = {
       description: 'Karnatic vocal instruction in sruthi, swara, tala, varnams, kritis, devotional songs, and practice discipline.',
       highlights: ['Voice culture', 'Swara and tala foundations', 'Devotional and classical repertoire'],
       image_url: '/images/Karnatic_music.jpeg'
+    },
+    {
+      id: 4,
+      title: 'Mohiniattam',
+      category: 'Classical Dance',
+      description: 'Graceful Kerala classical dance training focused on lasya, expressive storytelling, rhythm, hand gestures, and traditional repertoire.',
+      highlights: ['Lasya and graceful movement', 'Expression and storytelling', 'Beginner-friendly foundations'],
+      image_url: ''
     }
   ],
   locations: [
@@ -40,7 +46,7 @@ export const fallbackContent = {
     {
       id: 1,
       name: 'Experienced Dance Faculty',
-      specialty: 'Bharathanatiya and Kuchipudi',
+      specialty: 'Bharathanatiya, Kuchipudi, and Mohiniattam',
       bio: 'Teachers guide students through classical technique, rhythm, expression, choreography, and stage discipline with individual attention.',
       image_url: 'https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&w=900&q=80'
     },

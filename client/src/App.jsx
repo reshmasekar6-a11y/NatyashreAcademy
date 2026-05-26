@@ -172,9 +172,14 @@
                 const fullProgramImg = resolveImageUrl(program.image_url);
                 return (
                   <article className="program-card" key={program.id}>
-                    <img src={fullProgramImg} alt={`${program.title} class`} />
-                  
-    
+                    {fullProgramImg ? (
+                      <img src={fullProgramImg} alt={`${program.title} class`} />
+                    ) : (
+                      <div className="program-image-placeholder" aria-label={`${program.title} image coming soon`}>
+                        <span>Image coming soon</span>
+                      </div>
+                    )}
+
                     <div>
                       <span>{program.category}</span>
                       <h3>{program.title}</h3>
@@ -352,6 +357,7 @@ function FormField({ label, type = "text", name, value, error, onChange, require
 }
 
     export default App;
+
 
 
 

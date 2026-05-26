@@ -339,11 +339,27 @@ h1 {
 }
 
 .program-card img,
-.teacher-card img {
-  width: 1100%;
-  
+.teacher-card img,
+.program-image-placeholder {
+  width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+}
+
+.program-image-placeholder {
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  color: var(--muted);
+  font-weight: 900;
+  background: linear-gradient(135deg, rgba(213, 110, 34, 0.12), rgba(15, 111, 107, 0.12));
+}
+
+.program-image-placeholder span {
+  color: var(--muted);
+  font-size: 0.86rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .program-card div,
@@ -656,3 +672,5 @@ h1 {
     display: grid;
   }
 }
+
+
